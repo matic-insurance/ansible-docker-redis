@@ -1,2 +1,23 @@
 ---
-# tasks file for docker-redis
+- name: Pull Redis images
+  docker_image:
+    name: '{{ redis_docker_name }}'
+    tag: '{{ redis_docker_image_tag }}'
+
+- name: Create Redis data container
+  docker_container:
+    name: '{{ redis_container_name }}-data'
+    image: '{{ redis_docker_name }}:{{ redis_docker_image_tag }}'
+    state: present
+
+- name: Run Redis container
+  docker_container:
+    name: '{{ redis_container_name }}'
+    image: '{{ redis_docker_name }}:{{ redis_docker_image_tag }}'
+    restart_policy: always
+    state: started
+    command: '--appendonly yes'
+    ports:
+      - '{{ redis_port }}:6379'
+    volumes_from:
+      - '{{ redis_container_name }}-data'

@@ -1,2 +1,6 @@
 ---
 # defaults file for docker-redis
+redis_docker_image: 'redis'
+redis_docker_image_tag: '3-alpine'
+redis_container_name: 'redis'
+redis_port: 6379
