@@ -20,6 +20,12 @@ redis_container_name: 'redis'
 redis_port: 6379
 ```
 
+
+Docker tuning can be done with these variables:
+```
+container_memory_limit: 512m
+```
+
 Dependencies
 ------------
 

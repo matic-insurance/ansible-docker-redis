@@ -17,6 +17,7 @@
     restart_policy: always
     state: started
     command: '--appendonly yes'
+    memory: {{ container_memory_limit | default(omit) }}
     ports:
       - '{{ redis_port }}:6379'
     volumes_from:
