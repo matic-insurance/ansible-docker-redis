@@ -1,5 +1,6 @@
 Role Name
 =========
+[![Build Status](https://travis-ci.org/matic-insurance/ansible-docker-postgres.svg?branch=master)](https://travis-ci.org/matic-insurance/ansible-docker-postgres)
 
 Ansible role to manage and run the redis docker container. It uses data container for persistence, which is more elegant way comparing to host volumes.
 
