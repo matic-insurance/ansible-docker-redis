@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
-  remote_user: root
+  connection: local
   roles:
-    - docker-redis
+    - role: ../..
+      redis_container_name: 'test-redis'
+      redis_port: '6789'
