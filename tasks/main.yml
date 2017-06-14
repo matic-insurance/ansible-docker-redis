@@ -16,7 +16,7 @@
     image: '{{ redis_docker_image }}:{{ redis_docker_image_tag }}'
     restart_policy: always
     state: started
-    command: '--appendonly yes'
+    command: '{{ redis_container_command }}'
     memory: '{{ container_memory_limit | default(omit) }}'
     ports:
       - '{{ redis_port }}:6379'

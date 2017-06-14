@@ -7,3 +7,4 @@ redis_port: 6379
 
 #Docker variables
 container_memory_limit: null
+redis_container_command: '--appendonly yes'
